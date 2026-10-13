@@ -1,0 +1,63 @@
+path	method	impl_class	handler	args
+/addCleanConfigMode	POST	CleanConfigApiImpl	addCleanConfigMode	CleanConfigModeInfo cleanConfigModeInfo
+/androidSystemConfigUpdate	GET	RobotApiImpl	androidSystemConfigUpdate	AndroidSystemBaseConfigVO androidSystemBaseConfigVO
+/cleanConfigParamsReset	POST	CleanConfigApiImpl	cleanConfigParamsReset	
+/cleanConfigParamsResetByModeId	POST	CleanConfigApiImpl	cleanConfigParamsResetByModeId	String str
+/cleanConfigParamsUpdate	POST	CleanConfigApiImpl	cleanConfigParamsUpdate	CleanParamsUpdateDTO cleanParamsUpdateDTO
+/cleanModeReset	POST	CleanConfigApiImpl	cleanModeReset	
+/cleanStrategyEnabled	POST	CleanApiImpl	cleanStrategyEnabled	EditStrategyVo editStrategyVo
+/cleanStrategyTemplateList	GET	CleanApiImpl	cleanStrategyTemplateList	
+/delCleanStrategy	POST	CleanApiImpl	delCleanStrategy	Set<String> set
+/eventBatchSave	POST	RobotApiImpl	eventBatchSave	List<BuriedPointEventVO> list
+/eventSave	POST	RobotApiImpl	eventSave	BuriedPointEventVO buriedPointEventVO
+/getAndroidSystemConfig	GET	RobotApiImpl	getAndroidSystemConfig	
+/getAntiDrop	GET	UsbApiImpl	getAntiDrop	
+/getByVersion	GET	SoftVersionApiImpl	getByVersion	String str
+/getCleanConfigMode	GET	CleanConfigApiImpl	getCleanConfigMode	String str
+/getCleanConfigParams	GET	CleanConfigApiImpl	getCleanConfigParams	
+/getConsumptiveStatistic	GET	RobotStatisticApiImpl	getConsumptiveStatistic	
+/getCurrentLoadMapInfo	GET	MapApiImpl	getCurrentLoadMapInfo	EditMapNameDTO editMapNameDTO
+/getEmotion	GET	UsbApiImpl	getEmotion	
+/getEmotionC40	GET	UsbApiImpl	getEmotionC40	
+/getLightStrip	GET	UsbApiImpl	getLightStrip	
+/getLockTime	GET	UsbApiImpl	getLockTime	
+/getLogDetail	GET	CleanApiImpl	getLogDetail	CleanOperationVo cleanOperationVo
+/getMapInfo	GET	MapApiImpl	getMapInfo	EditMapNameDTO editMapNameDTO
+/getMapInfoFilterElevator	GET	MapApiImpl	getMapInfoFilterElevator	EditMapNameDTO editMapNameDTO
+/getPowerProtectConfig	GET	RobotApiImpl	getPowerProtect	
+/getRobotInfo	GET	RobotApiImpl	getRobotInfo	
+/getScreenExpression	GET	UsbApiImpl	getScreenExpression	
+/getTimerCleanStrategyList	GET	CleanApiImpl	getTimerCleanStrategyList	
+/getVolume	GET	UsbApiImpl	getVolume	int i
+/getWorkStationConfig	GET	UsbApiImpl	getWorkStation	
+/listCleanConfigMode	GET	CleanConfigApiImpl	listCleanConfigMode	
+/listCurrentMapNavigationPoints	GET	MapApiImpl	listCurrentMapNavigationPoints	
+/mapFloorList	GET	MapApiImpl	mapFloorList	
+/powerProtectConfigUpdate	GET	RobotApiImpl	powerProtectUpdate	PowerProtectConfigVO powerProtectConfigVO
+/reboot	POST	RobotApiImpl	reboot	
+/removeCleanConfigMode	POST	CleanConfigApiImpl	removeCleanConfigMode	String str
+/resetConsumptive	GET	RobotStatisticApiImpl	consumptiveReset	String str
+/restartRosNode	POST	RobotApiImpl	restartRosNode	
+/robotCleanAdjustConfigUpdate	POST	RobotApiImpl	robotCleanAdjustConfigUpdate	RobotCleanConfig robotCleanConfig
+/robotDisturbModeConfigUpdate	POST	RobotApiImpl	robotDisturbModeConfigUpdate	RobotDisturbModeConfigVO robotDisturbModeConfigVO
+/robotLoadMapOpenPosition	POST	MapApiImpl	loadMap	MapOperateDTO mapOperateDTO
+/saveCleanConfigModes	POST	CleanConfigApiImpl	saveCleanConfigMode	CleanModeUpdateDTO cleanModeUpdateDTO
+/saveCleanConfigModes	POST	CleanConfigApiImpl	saveCleanConfigModeByCloud	CleanModeUpdateDTO cleanModeUpdateDTO, String str, String str2
+/saveCleanStrategy	POST	CleanApiImpl	saveCleanStrategy	CleanStrategyVO cleanStrategyVO
+/setAntiDrop	GET	UsbApiImpl	setAntiDrop	LightBean lightBean
+/setDustPush	GET	UsbApiImpl	setDustPush	DustPushBean dustPushBean
+/setEmotion	GET	UsbApiImpl	setEmotion	EmotionBean emotionBean
+/setEmotionC40	GET	UsbApiImpl	setEmotionC40	EmotionC40Bean emotionC40Bean
+/setLamp	GET	UsbApiImpl	setLamp	ModeBean modeBean
+/setLightStrip	GET	UsbApiImpl	setLightStrip	LightBean lightBean
+/setLockTime	GET	UsbApiImpl	setLockTime	LockTimeBean lockTimeBean
+/setManual	GET	UsbApiImpl	setManual	ManualBean manualBean
+/setPassword	GET	UsbApiImpl	setPassword	PasswordBean passwordBean
+/setScreenExpression	GET	UsbApiImpl	setScreenExpression	ScreenExpressionSwitchBean screenExpressionSwitchBean
+/setVolume	GET	UsbApiImpl	setVolume	int i, VolumeBean volumeBean
+/setWorkStationConfig	GET	UsbApiImpl	setWorkStationConfig	WorkStationConfigBean workStationConfigBean
+/taskImageReport	POST	CleanApiImpl	taskImageReport	final WebTaskReportImageBean.ReportImageBean.ReportImageDetailBean reportImageDetailBean
+/test	GET	SysDictApiImpl	getPeanutDomainConfigTest	
+/updateAreaName	POST	MapApiImpl	updateAreaName	MapAreaUpdateDTO mapAreaUpdateDTO
+/updateCleanConfigMode	POST	CleanConfigApiImpl	updateCleanConfigMode	CleanConfigModeInfo cleanConfigModeInfo
+/updateCleanStrategy	POST	CleanApiImpl	updateCleanStrategy	CleanStrategyInfoDTO cleanStrategyInfoDTO, boolean z

@@ -1,0 +1,226 @@
+path	method	group	sdk_class	param_keys
+/button/enable	POST	device	EmergencyBtnEnableApi	ApiConstant.Action.ENABLE
+/button/lock	POST	device	EmergencyBtnLockApi	
+/button/status	GET	device	EmergencyBtnStatusApi	
+/calib/C30_depth	GET	kc01	DepthTopApi	
+/charge/auto	POST	battery	ChargeAutoApi	ApiConstant.ParamKey.DEST_PARAM
+/charge/default	POST	battery	ChargeDefaultApi	ApiConstant.ParamKey.DEST_PARAM
+/charge/manu	POST	battery	ChargeManualApi	
+/charge/matchTimes	GET	battery	ChargeMatchTimesApi	
+/charge/status	GET	battery	BatteryInfoApi	
+/charge/status	GET	battery	ChargeStatusApi	
+/charge/stop	POST	battery	ChargeStopApi	
+/clean/3dPositionStatus	GET	clean	Clean3dPositionStatusApi	
+/clean/action	POST	clean	CleanActionApi	action
+/clean/cameraCalibration	POST	clean	CameraCalibrationApi	command
+/clean/cameraCalibrationStatus	GET	clean	CameraCalibrationStatusApi	
+/clean/cleanInfoGet	POST	clean	GetCleanInfoApi	
+/clean/config	POST	clean	CleanConfigApi	
+/clean/current_motor_speed	GET	clean	CleanCurrentMotorSpeed	
+/clean/deviceStatus	GET	clean	CleanDeviceStatusApi	
+/clean/dst	POST	clean	CleanStartApi	ApiConstant.ParamKey.DEST_PARAM,allowCrossCarpet
+/clean/dstV2	POST	clean	CleanStartV2Api	ApiConstant.ParamKey.DEST_PARAM,allowCrossCarpet
+/clean/is_cross_carpet	POST	clean	CleanIsCrossCarpetApi	ApiConstant.ParamKey.DEST_PARAM
+/clean/motionRecord	POST	clean	CleanMotionRecordApi	taskId,action
+/clean/motionReport	GET	clean	CleanMotionReportApi	
+/clean/noDisturbMode	POST	clean	CleanNoDisturbModeActionApi	ApiConstant.Action.ENABLE
+/clean/params_config	POST	clean	CleanParamsConfigApi	
+/clean/personalPath	POST	clean	CleanPersonalPathApi	action,name,zoneId,material
+/clean/personalPathStatus	GET	clean	CleanPersonalPathStatusApi	
+/clean/positionStatus	GET	clean	CleanPositionStatusApi	
+/clean/relocationPosition	POST	clean	CleanRelocationPositionApi	action,id
+/clean/reportSelfClean	GET	clean	CleanNeedSelfCleanApi	
+/clean/status	GET	clean	CleanStatusApi	
+/clean/taskSelfClean	POST	clean	CleanTaskSelfCleanApi	mode
+/clean/taskSelfCleanStatus	GET	clean	CleanTaskSelfCleanStatusApi	
+/clean/taskSnapshotAction	POST	clean	CleanTaskSnapshotApi	zoneId,action
+/clean/taskSnapshotResult	POST	clean	CleanTaskSnapshotResultApi	
+/detect/image	GET	map	DetectImageApi	
+/devices/batteryInfo	GET	battery	ScmBatteryInfoApi	
+/devices/deviceStatusReport	GET	device	DeviceStatusReportApi	
+/devices/info	POST	device	DeviceInfoApi	
+/devices/list	GET	device	DeviceListApi	
+/devices/moveControl	POST	device	DevicesMoveControlApi	ApiConstant.NaviAction.RESET,linear,angular,direction,time
+/devices/powerSavingMode	GET	system	SystemPowerSavingMode	SensorFdlManualApi.PARAM_CMD
+/devices/reboot	POST	device	DeviceRebootApi	id,name,isReposition
+/devices/reportCheck	GET	diagnosis	DevicesCheckApi	
+/devices/selfCheck	POST	diagnosis	SelfCheckApi	
+/devices/upperCoverStatus	POST	device	UpperCoverStatusApi	status
+/devices/version	GET	device	DeviceVersionApi	
+/devices/version	GET	kc01	LightStateApi	
+/devices/xmanCmd	POST	device	DeviceXmanCmdApi	SensorFdlManualApi.PARAM_CMD
+/devices/xmanStatus	GET	device	DeviceXmanStatusApi	
+/diagnosis/deviceCheck	POST	diagnosis	RobotDeviceCheckApi	type,standard,TypedValues.CycleType.S_WAVE_OFFSET,LinkFormat.COUNT
+/diagnosis/deviceCheckStatus	POST	diagnosis	RobotDeviceCheckStatusApi	type
+/diagnosis/deviceCheckStatus	POST	diagnosis	RobotDeviceCheckStatusV2Api	type
+/diagnosis/deviceCheckStatus/v2	POST_LARGE	diagnosis	RobotDeviceCheckStatusPostLargeV2Api	type
+/diagnosis/deviceMatch	POST	diagnosis	RobotDeviceMatchApi	type,key,info
+/diagnosis/deviceMatchStatus	POST	diagnosis	RobotDeviceMatchStatusApi	type
+/diagnosis/environmentCheck	POST	diagnosis	RobotEnvironmentCheckApi	type,action
+/diagnosis/environmentCheckStatus	GET	diagnosis	RobotEnvironmentCheckStatusApi	
+/diagnosis/realtimeStatus	POST	device	RealTimeStatusApi	id,jSONObject3);
+            }
+            jSONObject2.put("scene,ai.e
+/diagnosis/robotEvent	GET	diagnosis	RobotEventApi	
+/diagnosis/robotStatus	GET	diagnosis	RobotDeviceTreeStatusApi	
+/elevator/InformationToCloud	GET	peripheral	ElevatorInformationToCloudApi	
+/elevator/RequestToCloud	GET	peripheral	ElevatorRequestToCloudApi	
+/elevator/cloudElevatorToRobot	GET	peripheral	CloudElevatorInformationToRobotApi	
+/elevator/forwardToRobot	GET	peripheral	ElevatorToRobotApi	
+/elevator/forwardToRobot/v2	POST_LARGE	peripheral	ElevatorToRobotV2Api	
+/elevator/forwardToServer	GET	peripheral	ElevatorToServerApi	
+/elevator/status	GET	peripheral	ElevatorStatusApi	
+/error/Alert	POST	clean	CleanErrorAlertApi	code
+/fdl/checkStatus	POST	sensor	SensorFdlCmdStatusApi	type
+/fdl/cmd	POST	sensor	SensorFdlCmdApi	type,action
+/fdl/manu	POST	sensor	SensorFdlManualApi	PARAM_CMD,PARAM_SET
+/fdl/status	GET	sensor	SensorFdlManualStatusApi	
+/gate/forwardToRobot	GET	peripheral	GateToRobotApi	
+/gate/forwardToServer	GET	peripheral	GateToServerApi	
+/guide/dst	POST	navigation	GuideSetTargetApi	ApiConstant.ParamKey.DEST_PARAM
+/guide/info	GET	navigation	GuideInfoApi	
+/image/detectStatus	GET	map	ImageDetectStatusApi	
+/image/detectSwitch	GET	map	ImageDetectSwitchApi	gateSwitch,elevatorSwitch,navigationSwitch
+/imu/reset	GET	sensor	SensorImuResetApi	
+/map/commandreply	GET	map	MapCmdReplyApi	
+/map/commandrequest	POST	map	MapCmdRequestApi	
+/map/data	POST	map	MapDataGetApi	
+/map/downloadmap	POST_LARGE	map	MapDownloadApi	
+/map/downloadoptmap	POST_LARGE	map	MapDownloadOptApi	
+/map/downloadwebmap	FILE	map	MapDownloadNewApi	
+/map/list	GET	map	MapListApi	
+/map/path	POST	map	ZonePathApi	
+/map/pathList	GET	map	ZonePathListApi	
+/map/requestZoneOrder	POST	map	GetRecommendZoneApi	
+/map/savePersonalPath	POST_LARGE	clean	CleanSavePersonalPathApi	
+/map/uploadmap	GET_LARGE	map	MapUploadApi	
+/map/uploadobs	GET	map	MapUploadObsApi	
+/map/uploadoptmap	GET_LARGE	map	MapUploadOptApi	
+/map/zone	POST	map	MapZoneApi	
+/map/zoneList	GET	map	MapZoneListApi	
+/motor/enable	POST	device	MotorEnableApi	ApiConstant.Action.ENABLE
+/motor/enable	POST	kc01	DropEnableApi	ApiConstant.Action.ENABLE
+/motor/enable	POST	kc01	LightEnableApi	ApiConstant.Action.ENABLE
+/motor/manu	POST	device	MotorManualApi	ApiConstant.Action.MOVE
+/motor/set_speed	POST	device	DevicesMoveSetSpeedApi	linearSpeed,angularSpeed
+/motor/speed	GET	device	MotorSpeedApi	
+/motor/status	GET	device	MotorStatusApi	
+/navigation/action	POST	navigation	NavigationActionApi	action
+/navigation/all	GET	navigation	NavigationAllApi	
+/navigation/app_task_info	POST	navigation	NavigationTaskInfoApi	action,task_id
+/navigation/avoidAction	GET	navigation	NavigationAvoidActionStatusApi	
+/navigation/block_state_duration	POST	navigation	NavigationSetBlockTimeoutApi	duration
+/navigation/cruise	POST	navigation	NavigationCruiseApi	switch,from,to
+/navigation/destInfo	POST	navigation	NavigationDestInfoApi	id
+/navigation/dest_poses	GET	navigation	NavigationDestPoseApi	
+/navigation/dest_posesV2	GET	navigation	NavigationDestPoseV2Api	
+/navigation/disinfectAction	POST	navigation	NavigationDisinfectActionApi	action,id,data
+/navigation/disinfectStatus	GET	navigation	NavigationDisinfectStatusApi	
+/navigation/disinfectionInfo	GET	navigation	NavigationDisinfectionInfoApi	
+/navigation/dst	POST	navigation	NavigationSetTargetApi	ApiConstant.ParamKey.DEST_PARAM,approximatearrival,superMarketMode,scene_mode,taskType,takeControl,patrol_enable
+/navigation/error_status	GET	navigation	NavigationErrorStatusApi	
+/navigation/exitStatus	GET	peripheral	NavigationVendorExitStatusApi	
+/navigation/extensionStatus	POST	peripheral	NavigationJackingStateApi	status
+/navigation/humanDetection_cmd	GET	navigation	NavigationHumanDetectionStatusApi	
+/navigation/humanDetection_result	POST	navigation	NavigationHumanDetectionResultApi	result
+/navigation/movemodeinfo	POST	navigation	NavigationSportModeApi	movemode
+/navigation/multi	POST	navigation	NavigationSetMultiTargetApi	dst_1st,dst_2nd,dst_3rd,dst_4th,dst_5th,dst_6th,dst_7th,dst_8th,dst_9th,dst_10th
+/navigation/path	GET	navigation	NavigationPathApi	data
+/navigation/patrolChangeGoal	GET	navigation	NavigationPatrolChangeGoalApi	
+/navigation/patrolChangeGoalAck	POST	navigation	NavigationPatrolChangeGoalAckApi	ack
+/navigation/robotOnSlope	GET	navigation	NavigationRobotOnSlopeApi	
+/navigation/shortest_path_activate	POST	navigation	NavigationShortPath	active_path_state
+/navigation/speed	POST	navigation	NavigationSpeedApi	userspeed,action,data
+/navigation/speed	POST	navigation	NavigationStableModeApi	status,action,data
+/navigation/status	GET	navigation	NavigationStatusApi	
+/navigation/swerveStatus	GET	navigation	NavigationSwerveStatusApi	
+/navigation/vendorAction	POST	peripheral	NavigationVendorActionApi	action
+/navigation/vendorPosition	GET	peripheral	NavigationVendorPositionApi	type
+/param/elevator_lock	POST	device	ElevatorLockApi	elevatorLockState
+/param/integrate	POST	device	ParamIntegrateV1Api	
+/param/integrate/v2	POST_LARGE	device	ParamIntegrateV2Api	
+/param/loraChannel	GET	device	ParamLoraChannelApi	lora_channel
+/param/upload	GET	device	ParamUploadApi	
+/param/upload_integrate	GET_LARGE	device	ParamUploadDescInfoApi	
+/position/action	POST	map	PositionActionApi	action
+/position/location_status	GET	map	PositionLocationStatusApi	
+/position/nearestPoseInfo	GET	map	PositionNearestPoseInfoApi	
+/position/notify	POST	system	PositionNotifyApi	action
+/position/originJudge	POST	map	PositionOriginJudgeActionApi	distance
+/position/realtimePositionStatus	GET	map	PositionRealtimeStatusApi	
+/position/region	GET	map	PositionRegionApi	
+/position/relocationPosition	POST	map	RelocationPositionApi	action,id
+/position/report	POST	map	PositionReportApi	
+/position/robotPosInfo	GET	map	PositionPosInfoApi	
+/position/status	GET	map	PositionStatusApi	
+/rk/ip	GET	system	RobotIPApi	
+/runtime/bellConfig	POST	system	BellConfigApi	
+/runtime/currentAppMode	POST	device	RuntimeAppModeApi	mode
+/runtime/danceCmd	POST	device	DeviceDanceCmdApi	SensorFdlManualApi.PARAM_CMD
+/runtime/download	POST	map	MapDownloadV2Api	ApiConstant.ParamKey.MD5_PARAM,url,type,mapUuid
+/runtime/download_action	POST	map	MapDownloadActionV2Api	action
+/runtime/download_result	GET	map	MapDownLoadStatusV2Api	
+/runtime/dynamicObstacles	GET	sensor	DynamicObjectApi	
+/runtime/error	GET	diagnosis	RuntimeHealthApi	
+/runtime/eventTrack	GET	diagnosis	RuntimeEventTrackApi	
+/runtime/event_report	GET	diagnosis	RuntimeEventReportApi	
+/runtime/followCmd	POST	navigation	NavigationFollowCmdApi	followSwitch,followDist
+/runtime/followData	POST	navigation	NavigationFollowDataApi	followAngular
+/runtime/getDstDistance	POST	system	GetDstDistanceApi	dstId
+/runtime/heartbeat	GET	diagnosis	RuntimeHeartbeatApi	sync
+/runtime/massage_report	GET	diagnosis	RuntimeMessageReportApi	
+/runtime/object	GET	sensor	ObjectPerceptionApi	
+/runtime/odo	GET	system	SystemOdoApi	
+/runtime/queryId	GET	map	NearestTargetApi	
+/runtime/resourceConfig	POST	map	ResourceConfigApi	
+/runtime/rostime	GET	system	RuntimeRosTimeApi	
+/runtime/setScheduleOrigin	GET	system	SetScheduleOrigin	pose_id
+/runtime/startup	GET	system	SystemStartUpApi	
+/runtime/time	POST	system	SyncTimeApi	ApiConstant.ParamKey.TIMESTAMP_PARAM
+/runtime/wifi	GET	system	SystemRobotWifiApi	
+/runtime/workmode	POST	system	SetWorkModeApi	mode
+/schedule/action	POST	navigation	ScheduleActionApi	action,desc
+/schedule/live	GET	navigation	ScheduleLiveApi	
+/schedule/module	POST	navigation	ScheduleModuleApi	channel,number
+/schedule/quick_origin_switch	POST	navigation	ScheduleSubstituteEnableApi	ApiConstant.Action.ENABLE
+/schedule/status	GET	navigation	ScheduleStatusApi	
+/schedule/statusAction	POST	navigation	ScheduleStatusActionApi	action
+/security/cmd	POST	device	SecurityRobotMoveApi	action,data,NotificationCompat.CATEGORY_MESSAGE
+/security/result	GET	device	SecurityRobotResultApi	
+/sensor/bump	GET	sensor	SensorBumpApi	
+/sensor/bumpInfo	GET	sensor	SensorBumpInfoApi	
+/sensor/bumpStatus	GET	sensor	SensorBumpStatusApi	
+/sensor/depth	GET	sensor	SensorDepthApi	
+/sensor/depth_with_type	GET	sensor	SensorDepthApiV2	
+/sensor/fdl	GET	sensor	SensorAntiFallLidarApi	
+/sensor/gazer	GET	sensor	SensorGazerApi	
+/sensor/imu	GET	sensor	SensorImuApi	
+/sensor/imuangle	GET	sensor	SensorImuAngleApi	
+/sensor/lidar	GET	sensor	SensorLidarApi	
+/sensor/pointCloudSwitch	POST	sensor	SensorPointCloudSwitchApi	
+/sensor/psd	GET	sensor	SensorPsdApi	
+/sensor/sonar	GET	sensor	SensorSonarApi	
+/sensor/status	GET	sensor	SensorStatusApi	
+/task/status	GET	navigation	TaskStatusApi	
+/through/down	POST	device	BottomRawDownApi	ApiConstant.ParamKey.TRANS_PARAM,type
+/through/down	POST	device	BottomRawDownNonApi	ApiConstant.ParamKey.TRANS_PARAM,type
+/through/up	GET	device	BottomRawUpApi	
+/timestamp/sync	POST	system	TimestampSyncApi	app_time
+/update/cancel	POST	upgrade	UpdateCancelApi	DtlsEndpointContext.HANDSHAKE_MODE_FORCE
+/update/download	FILE	upgrade	UpdateDownloadApi	
+/update/handle	GET	upgrade	UpdateHandleApi	
+/update/package	POST	upgrade	UpdatePackageApi	
+/update/reboot	POST	upgrade	UpdateRebootApi	
+/update/start	POST	upgrade	UpdateStartApi	DtlsEndpointContext.HANDSHAKE_MODE_FORCE
+/update/state	GET	upgrade	UpdateStateApi	
+/vendor/dst	POST	peripheral	VendorSetTargetApi	ApiConstant.ParamKey.DEST_PARAM
+/vendor/industryShelfAction	POST	peripheral	VendorIndustryShelfActionApi	action
+/vendor/industryShelfStatus	GET	peripheral	VendorIndustryShelfStatusApi	
+/vendor/match	GET	peripheral	VendorMatchApi	
+/vendor/moveIn	POST	peripheral	VendorMoveInApi	device
+/vendor/moveOut	POST	peripheral	VendorMoveOutApi	device
+/vendor/rackSet	POST	peripheral	VendorRackSetApi	rack_length_m,rack_width_m,rack_leg_length_m,rack_leg_width_m,rack_leg_gap_entry_side_m,rack_leg_gap_parallel_side_m,rack_bottom_height_m,back_depth_m,rackDimensions
+/vendor/throughDown	GET	device	BottomVendorUpApi	
+/vslam/image	GET	map	VslamIdentifyImageApi	
+/vslam/picture	GET	map	VslamPictureApi	
+/welcome/switch	POST	sensor	WelcomeSwitchApi	SensorFdlManualApi.PARAM_CMD
