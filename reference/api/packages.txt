@@ -1,0 +1,9 @@
+package:/data/app/com.keenon.peanut.peanutservice-q2is_vjkGvAD2YUaAEwzUQ==/base.apk=com.keenon.peanut.peanutservice
+package:/data/app/com.keenon.remote_control_oray-NFjPGgwLpTadppK-_r00fQ==/base.apk=com.keenon.remote_control_oray
+package:/data/app/com.keenon.systemservice-6nb0bL0U9PktdXpaMcDLDA==/base.apk=com.keenon.systemservice
+package:/odm/bundled_uninstall_back-app/samba_client_v4.2_apkpure.com/samba_client_v4.2_apkpure.com.apk=lysesoft.andsmb
+package:/product/overlay/Usb0EthernetOverlay.apk=com.keenon.usb0ethernet.overlay
+package:/data/app/com.termux-L33NkL-K0wC5z2Reipxgiw==/base.apk=com.termux
+package:/data/app/com.keenon.peanut.clean-QVfbCtvNAzrMbfq7hoUWnA==/base.apk=com.keenon.peanut.clean
+package:/data/app/com.keenon.krlog-CWJ8_SDVu4_lduXWCU3Pwg==/base.apk=com.keenon.krlog
+package:/data/app/com.keenon.android_peanut_mfg-__35HAVUQiH4SI60iCsbBQ==/base.apk=com.keenon.android_peanut_mfg

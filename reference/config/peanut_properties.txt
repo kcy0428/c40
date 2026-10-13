@@ -1,0 +1,11 @@
+#Wed Apr 15 14:43:31 GMT+08:00 2026
+#Wed Apr 22 09:14:52 GMT+08:00 2026
+robot.type=C40
+machine.type=C40
+#Mon Jun 22 14:25:50 GMT+09:00 2026
+app.package.version=C40 S-LS-M013C00-RW-F00-V243
+#Thu Oct 08 17:53:18 GMT+09:00 2026
+map.scene.code=tNCAXl
+map.motify.time=1790931735705
+map.uuid=25188c19bf2244ae98be2a0977463597
+map.push.state=success

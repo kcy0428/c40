@@ -1,0 +1,250 @@
+10-12 20:31:32.052  1194  1474 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/odo, type: GET, msgType: CON, params: null]
+10-12 20:31:35.052  1194  1474 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/odo, type: GET, msgType: CON, params: null]
+10-12 20:31:36.239  1194  1407 I PeanutSDK:SDK--: [CoAPPing][startPing][offLineTime: 11205, timeout : 25000, isTimeout : false, isOnline : true]
+10-12 20:31:38.052  1194  1474 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/odo, type: GET, msgType: CON, params: null]
+10-12 20:31:41.054  1194  1474 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/odo, type: GET, msgType: CON, params: null]
+10-12 20:31:43.107  1194  1408 I PeanutSDK:API--: [RuntimeOdoApi][onSuccess: {"code":0,"data":{"odo":116566.83593750},"msg":"success","status":0}]
+10-12 20:31:43.114  1194  1408 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /param/upload, type: GET, msgType: CON, params: null]
+10-12 20:31:43.124  1194  1408 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /devices/version, type: GET, msgType: CON, params: null]
+10-12 20:31:43.132  1194  1423 I PeanutSDK:API--: [DeviceVersionApi][onSuccess: {"code":0,"data":{"devices":[{"id":11,"name-cn":"ros","name-en":"ros","sub-version":[{"name":"database_version","version":"2.3.1c1-4542-gad37988-dirty"},{"name":"interactive","version":"2.3.1c1-4542-gad37988-dirty"}],"sw":"slam-ros-v2.10.5-c2v2-0-gb518ffd"},{"hw":"v1.2","id":2,"n
+10-12 20:31:43.139  1194  2022 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/startup, type: GET, msgType: CON, params: null]
+10-12 20:31:43.143  1194  1194 I PeanutSDK:SDK--: SubscribeApiImpl not support : clean.through.up
+10-12 20:31:43.144  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /through/up, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.145  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /through/up]
+10-12 20:31:43.145  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.145  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.145  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.145  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.145  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.146  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /charge/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.147  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /charge/status]
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.147  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.148  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /button/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.150  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /button/status]
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.150  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.151  1194  1919 I PeanutSDK:API--: MotorEnableApi[onSuccess: {"code":0,"msg":"success","status":0}]
+10-12 20:31:43.154  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /clean/deviceStatus, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.155  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /clean/deviceStatus]
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.155  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.156  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /clean/positionStatus, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.157  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /clean/positionStatus]
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.157  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.158  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /position/realtimePositionStatus, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.159  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /position/realtimePositionStatus]
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.159  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.161  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /position/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.161  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /position/status]
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.162  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.163  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /clean/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.163  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /clean/status]
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.164  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.165  1194  2023 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /timestamp/sync, type: POST, msgType: CON, params: {"app_time":"2026-10-12 20:31:43,143"}]
+10-12 20:31:43.169  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /navigation/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.173  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /navigation/status]
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.173  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.174  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /elevator/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.175  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /elevator/status]
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.175  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.176  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /elevator/forwardToServer, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.177  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /elevator/forwardToServer]
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.178  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.179  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /sensor/bumpInfo, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.180  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /sensor/bumpInfo]
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /sensor/bumpInfo              , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.180  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.181  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /clean/personalPathStatus, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.182  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /clean/personalPathStatus]
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /sensor/bumpInfo              , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /clean/personalPathStatus     , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.182  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.184  1194  1939 I PeanutSDK:API--: [RuntimeOdoApi][onSuccess: {"code":0,"data":{"odo":116566.83593750},"msg":"success","status":0}]
+10-12 20:31:43.183  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /runtime/odo, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.187  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /runtime/odo]
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /sensor/bumpInfo              , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /clean/personalPathStatus     , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /runtime/odo                  , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.187  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.188  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /position/robotPosInfo, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.189  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /position/robotPosInfo]
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /sensor/bumpInfo              , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /position/robotPosInfo        , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /clean/personalPathStatus     , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /runtime/odo                  , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.190  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.191  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /schedule/status, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.191  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /schedule/status]
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /position/status              , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /charge/status                , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /schedule/status              , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /elevator/forwardToServer     , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /clean/positionStatus         , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /runtime/error                , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /clean/deviceStatus           , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /sensor/bumpInfo              , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /navigation/status            , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /position/realtimePositionStatus, false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /elevator/status              , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /position/robotPosInfo        , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /through/up                   , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /button/status                , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /motor/status                 , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /clean/personalPathStatus     , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /runtime/odo                  , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: /clean/status                 , false
+10-12 20:31:43.192  1194  1194 D PeanutSDK:SDK--: ]
+10-12 20:31:43.193  1194  1194 I PeanutSDK:SDK--: [CoapLinkAdapter][adapt][, path: /clean/current_motor_speed, type: OBSERVER, msgType: CON, params: null]
+10-12 20:31:43.194  1194  1194 I PeanutSDK:SDK--: [PeanutCoapClient][asyncObserver][new: /clean/current_motor_speed]
+10-12 20:31:43.194  1194  1194 D PeanutSDK:SDK--: [PeanutCoapClient][dump][
+10-12 20:31:43.194  1194  1194 D PeanutSDK:SDK--: /position/status              , false

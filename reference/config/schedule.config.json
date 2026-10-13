@@ -1,0 +1,12 @@
+{
+	"RSC":	1,
+	"RSH":	1,
+	"RSM":	1,
+	"RSS":	1,
+	"avoid_aside_enable":	false,
+	"avoidance_narrow":	[],
+	"origin_avoid_enable":	false,
+	"origin_group":	[],
+	"path_avoid_enable":	true,
+	"schedule_distance":	6
+}
