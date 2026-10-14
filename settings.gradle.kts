@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "c40"
-include(":app")
+include(":core", ":mock-robot", ":app")

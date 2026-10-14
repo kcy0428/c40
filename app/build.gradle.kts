@@ -10,8 +10,8 @@ android {
         applicationId = "kr.c40.floor"
         minSdk = 29
         targetSdk = 29
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 2
+        versionName = "0.2.0"
     }
 
     buildTypes {
@@ -28,7 +28,7 @@ android {
 }
 
 dependencies {
-    implementation("com.squareup.okhttp3:okhttp:5.3.2")
-    implementation("org.eclipse.californium:californium-core:3.14.0")
+    // OkHttp, Californium 은 core 가 api 로 노출한다.
+    implementation(project(":core"))
     implementation("org.slf4j:slf4j-nop:2.0.17")
 }
