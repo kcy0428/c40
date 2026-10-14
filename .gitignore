@@ -6,3 +6,12 @@ local/
 *.db-shm
 *.pem
 *.key
+
+# Gradle / Android 빌드 산출물
+.gradle/
+build/
+app/build/
+local.properties
+*.iml
+.idea/
+.kotlin/
