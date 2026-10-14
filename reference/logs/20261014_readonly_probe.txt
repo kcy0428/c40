@@ -1,0 +1,23 @@
+endpoints=RobotEndpoints(httpBase=http://localhost:8089, coapHost=192.168.64.20, coapPort=5683)
+
+[HTTP GET /mapFloorList] HTTP 200 149ms
+{"code":"200","data":[{"floor":1,"mapId":"95475fe5cd3542089f9ef13e67232d85","mapName":"1"},{"floor":2,"mapId":"2dec60bde7f141a2be152260b1de02c5","mapName":"2"},{"floor":3,"mapId":"6e9a8461ef944180b48516ed17bbbc7d","mapName":"3"},{"floor":4,"mapId":"3ce4ab9232da45b181e0d0b4e9efed43","mapName":"4"},{"floor":5,"mapId":"2048c3d409b342229ad47f2a1d4f263c","mapName":"5"}],"errorMsg":"","msg":"success","responseType":1,"status":true}
+
+[HTTP GET /getCurrentLoadMapInfo] HTTP 200 232ms
+{"code":"200","data":{"areaAlongEdgePaths":[{"geometry":{"coordinates":[[360.0,367.0],[360.0,365.0],[360.0,363.0],[360.0,361.0],[360.0,359.0],[360.0,357.0],[361.9,357.1],[363.8,357.2],[365.7,357.3],[367.6,357.4],[369.5,357.5],[371.4,357.6],[373.3,357.7],[375.2,357.8],[377.1,357.9],[378.9,358.1],[380...(총 214007자)
+
+[COAP GET /position/status] 2.05 163ms
+{"code":0,"data":{"position":["开机区域"],"status":0},"msg":"success","status":0}
+
+
+[COAP GET /position/robotPosInfo] 2.05 6ms
+{"code":0,"data":{"buildDesc":[],"elevatorPosState":1,"floor":1,"robotPos":{"rotation":1.910,"x":-2.510,"y":-0.770}},"msg":"success","status":0}
+
+
+[COAP GET /clean/status] 2.05 8ms
+{"code":0,"data":{"cleanArea":0.0,"cleanNavStatus":0,"cleanStage":0,"cleanStatus":65535,"complementArea":0.0,"curZoneId":0,"percent":0.0,"plannerArea":0.0,"zoneArea":0.0},"msg":"success","status":0}
+
+
+[COAP GET /charge/status] 2.05 7ms
+{"code":0,"data":{"event":254,"power":99},"msg":"success","status":0}
+
