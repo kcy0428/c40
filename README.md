@@ -27,6 +27,9 @@ Keenon C40 청소 로봇의 **원클릭 층 전환 앱** 개발 프로젝트.
 - [x] 청소 앱 디컴파일 분석, 설계안 (2026-10-13)
 - [x] 읽기 전용 조회 앱 로봇 실측 (2026-10-14, [docs/04](docs/04_readonly_probe_results.md))
 - [x] 층 전환 시퀀서 + mock 로봇 + 단위·통합 테스트 + 층 전환 화면 (dry-run 기본). mock 상대로만 검증
-- [ ] 현재 건물 지도 제작, 지표점 등록 후 `action 3` 위치 지정 실측 (설계안 A 단계)
+- [x] 새 지도 "공대 3호" 1·2층 제작·덤프, ROS 층 전환 서비스 `/switch_floor_map_only` 실측 (2026-10-15, [docs/07](docs/07_robot_analysis.md), [docs/08](docs/08_floor_switch_research.md)): 층·청소 앱 지도는 바뀌지만 위치는 안 바뀜
+- [x] 원터치 층 전환 앱 v0.3.0 (`kr.c40.floor.onetouch`, 기준 위치 방식, [docs/06](docs/06_onetouch_app.md)). 로봇 설치됨, 실제 전송 시험 전
+- [ ] `/initialpose` 로 위치가 실제로 바뀌는지 2차 시험, 바닥 표시, 현장 최종 시험
+- [ ] 지표점 등록 후 `action 3` 위치 지정 실측 (설계안 A 단계, 지금 지도에는 지표점 없음)
 - [ ] 청소 자동 시작 (지금은 청소 앱을 여는 것까지)
 - [ ] AprilTag 방식 검토 (ROS 카메라 접근)

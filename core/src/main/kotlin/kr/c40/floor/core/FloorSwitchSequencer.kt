@@ -1,5 +1,7 @@
 package kr.c40.floor.core
 
+import kotlin.math.hypot
+
 enum class StepId(val label: String) {
     PRECHECK("사전 점검"),
     CONFIRM("사용자 확인"),
@@ -19,7 +21,19 @@ data class SwitchResult(
     val summary: String get() = steps.lastOrNull()?.message ?: ""
 }
 
-data class FloorTarget(val floor: Int, val landmarkId: Int)
+/** ROS 지도 좌표 (m, rad). */
+data class Pose2D(val x: Double, val y: Double, val theta: Double)
+
+/**
+ * 목표 층과 위치 지정 방법. 둘 중 하나만 준다.
+ * - [landmarkId]: 지도 관리 앱에 등록한 지표점 (CoAP `action 3`)
+ * - [pose]: 사전에 정해 둔 기준 위치 (ROS `/switch_floor_map_only`)
+ */
+data class FloorTarget(val floor: Int, val landmarkId: Int? = null, val pose: Pose2D? = null) {
+    init {
+        require((landmarkId == null) != (pose == null)) { "landmarkId 와 pose 중 하나만 지정해야 합니다" }
+    }
+}
 
 data class SequencerConfig(
     /** `/clean/status` 의 `cleanStatus` 중 "작업 없음"으로 보는 값. 65535 는 정지 상태 실측값, 나머지는 미측정. */
@@ -34,6 +48,8 @@ data class SequencerConfig(
     val mapFollowTimeoutMs: Long = 15_000,
     /** `RosLocationType` 11 = 지표점 위치 지정 ([코드]). */
     val locatedType: Int = 11,
+    /** 기준 위치 방식에서 "그 자리로 인식됨"으로 보는 거리 (m). */
+    val poseToleranceM: Double = 1.0,
 )
 
 /**
@@ -48,6 +64,7 @@ class FloorSwitchSequencer(
     private val onStep: (StepResult) -> Unit = {},
 ) {
     private val steps = mutableListOf<StepResult>()
+    private var startPos: RobotPos? = null
 
     /** @param confirm 사용자에게 보여 줄 문구를 받아 승인 여부를 돌려준다. */
     fun run(target: FloorTarget, confirm: (String) -> Boolean): SwitchResult {
@@ -70,9 +87,15 @@ class FloorSwitchSequencer(
 
     /** 통과하면 확인 창에 보여 줄 문구를, 실패하면 null 을 돌려준다. */
     private fun precheck(t: FloorTarget): String? {
-        val landmarks = reader.landmarks() ?: return no(StepId.PRECHECK, "지표점 목록을 읽지 못했습니다")
-        val lm = landmarks.find { it.id == t.landmarkId && it.floor == t.floor }
-            ?: return no(StepId.PRECHECK, "${t.floor}층에 지표점 id ${t.landmarkId} 가 없습니다")
+        val where = if (t.landmarkId != null) {
+            val landmarks = reader.landmarks() ?: return no(StepId.PRECHECK, "지표점 목록을 읽지 못했습니다")
+            val lm = landmarks.find { it.id == t.landmarkId && it.floor == t.floor }
+                ?: return no(StepId.PRECHECK, "${t.floor}층에 지표점 id ${t.landmarkId} 가 없습니다")
+            "지표점 '${lm.name}'"
+        } else {
+            val p = t.pose!!
+            "기준 위치 (%.2f, %.2f)".format(p.x, p.y)
+        }
 
         val floors = reader.floors() ?: return no(StepId.PRECHECK, "층 목록을 읽지 못했습니다")
         if (floors.none { it.floor == t.floor }) return no(StepId.PRECHECK, "${t.floor}층 지도가 로봇에 없습니다")
@@ -84,16 +107,24 @@ class FloorSwitchSequencer(
         if (charge.event in config.chargingEvents) return no(StepId.PRECHECK, "충전기 위에 있습니다 (event=${charge.event})")
 
         val pos = reader.robotPos() ?: return no(StepId.PRECHECK, "현재 위치를 읽지 못했습니다")
+        startPos = pos
 
-        val text = "${t.floor}층으로 전환합니다 (지표점 '${lm.name}', 현재 ${pos.floor}층)"
-        record(StepId.PRECHECK, true, "통과: 현재 ${pos.floor}층, 배터리 ${charge.power}%, 지표점 '${lm.name}'")
+        val text = "${t.floor}층으로 전환합니다 ($where, 현재 ${pos.floor}층)"
+        record(StepId.PRECHECK, true, "통과: 현재 ${pos.floor}층, 배터리 ${charge.power}%, $where")
         return text
     }
 
     private fun relocate(t: FloorTarget): Boolean {
-        var r = commands.relocateToLandmark(t.landmarkId)
+        if (t.pose != null) {
+            val r = commands.relocateToPose(t.floor, t.pose, startPos!!)
+            if (!r.ok) return no(StepId.RELOCATE, "층 전환 요청이 실패했습니다: ${r.code} ${r.body.take(160)}") != null
+            record(StepId.RELOCATE, true, if (commands.isDryRun) "dry-run: ${r.body}" else "요청 전송됨")
+            return true
+        }
+        val id = t.landmarkId!!
+        var r = commands.relocateToLandmark(id)
         if (!r.ok) {
-            r = commands.relocateToLandmarkFallback(t.landmarkId)
+            r = commands.relocateToLandmarkFallback(id)
             if (!r.ok) return no(StepId.RELOCATE, "위치 지정 요청이 실패했습니다: ${r.code} ${r.body.take(120)}") != null
         }
         record(StepId.RELOCATE, true, if (commands.isDryRun) "dry-run: ${r.body}" else "요청 전송됨")
@@ -112,12 +143,16 @@ class FloorSwitchSequencer(
                 last = "상태를 읽지 못함"
                 continue
             }
-            last = "status=${st.status} floor=${pos.floor} type=${st.type} poseId=${st.poseId}"
-            val located = st.status == 0 &&
-                pos.floor == t.floor &&
-                (st.floor == null || st.floor == t.floor) &&
-                (st.type == null || st.type == config.locatedType) &&
-                (st.poseId == null || st.poseId == t.landmarkId)
+            last = "status=${st.status} floor=${pos.floor} type=${st.type} poseId=${st.poseId} xy=(%.2f, %.2f)".format(pos.x, pos.y)
+            val common = st.status == 0 && pos.floor == t.floor && (st.floor == null || st.floor == t.floor)
+            // 기준 위치 방식은 type/poseId 값이 알려지지 않아 좌표로 판정한다.
+            val located = if (t.pose != null) {
+                common && hypot(pos.x - t.pose.x, pos.y - t.pose.y) <= config.poseToleranceM
+            } else {
+                common &&
+                    (st.type == null || st.type == config.locatedType) &&
+                    (st.poseId == null || st.poseId == t.landmarkId)
+            }
             if (located) {
                 record(StepId.VERIFY, true, "인식됨: $last (${(clock.nowMs() - t0) / 1000}초)")
                 return true

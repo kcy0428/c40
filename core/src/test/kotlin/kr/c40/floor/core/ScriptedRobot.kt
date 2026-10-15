@@ -54,7 +54,14 @@ class ScriptedRobot(private val clock: FakeClock) : RobotReader, RobotCommands {
         )
     }
 
-    override fun robotPos() = RobotPos(floorNow(), -2.5, -0.7, 1.9)
+    var poseOffsetM = 0.0                    // 기준 위치 방식에서 인식된 위치가 목표에서 벗어난 거리
+    private var targetPose: Pose2D? = null
+
+    override fun robotPos(): RobotPos {
+        val p = targetPose
+        return if (located() && p != null) RobotPos(floorNow(), p.x + poseOffsetM, p.y, p.theta)
+        else RobotPos(floorNow(), -2.5, -0.7, 1.9)
+    }
     override fun cleanStatus() = cleanStatus
     override fun chargeStatus() = ChargeStatus(98, chargeEvent)
     override fun landmarks() = landmarks
@@ -67,6 +74,15 @@ class ScriptedRobot(private val clock: FakeClock) : RobotReader, RobotCommands {
     override fun relocateToLandmarkFallback(id: Int): GatewayResult {
         sent += "fallback:$id"
         return if (fallbackOk) accept(id) else GatewayResult(false, "4.00", "reject", 0)
+    }
+
+    override fun relocateToPose(floor: Int, target: Pose2D, current: RobotPos): GatewayResult {
+        sent += "switchMap:$floor@${target.x},${target.y} from ${current.floor}@${current.x},${current.y}"
+        if (!relocateOk) return GatewayResult(false, "ROS", "{\"values\":{\"result\":false}}", 0)
+        targetFloor = floor
+        targetPose = target
+        relocatedAt = clock.nowMs()
+        return GatewayResult(true, "ROS", "ok", 0)
     }
 
     override fun loadMap(mapId: String): GatewayResult {

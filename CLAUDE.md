@@ -10,7 +10,7 @@ Three Gradle modules:
 
 - `core` (plain Kotlin/JVM, no Android dependency) — `RobotGateway` (GET only) and `WriteGateway` (POST) transports; `RealGateway` (OkHttp + Californium); `GatewayRobotReader` parses responses into typed state; `RobotCommands` (`LiveCommands` sends, `DryRunCommands` only records); `FloorSwitchSequencer` runs precheck → confirm → relocate → verify → map sync. It never starts cleaning.
 - `mock-robot` (JVM) — a fake robot: HTTP `:8089` plus CoAP/UDP `:5683`, with failure modes (`REJECT`, `NEVER_LOCATES`, `WRONG_FLOOR`, `MAP_STUCK`, `CLEANING`, `LEGACY_FIELDS`). Response formats copy the 2026-10-14 real probes. Its landmarks 101–103 are fictional, because the real robot has no `landmark` points yet.
-- `app` (Android) — `MainActivity` is the read-only probe (GET only, logs to a file). `SwitchActivity` is the floor-switch screen. It is **dry-run by default**: writes go out only when the user ticks "실제 전송 허용" and confirms the dialog. "청소 앱 열기" only opens the clean app; automatic cleaning start is not implemented.
+- `app` (Android, applicationId `kr.c40.floor.onetouch`, v0.3.0) — `HomeActivity` is the one-touch screen and `SetupActivity` sets each floor's method (reference pose or landmark); the reference-pose method calls ROS `/switch_floor_map_only` then `/initialpose` through rosbridge `:9090` (`Rosbridge.kt`; service and argument format are [실측], behaviour is [미검증]; 2026-10-15 test: floor and clean-app map follow, position does not). `MainActivity` is the read-only probe (GET only, logs to a file). `SwitchActivity` is the floor-switch screen. It is **dry-run by default**: writes go out only when the user ticks "실제 전송 허용" and confirms the dialog. "청소 앱 열기" only opens the clean app; automatic cleaning start is not implemented.
 
 Safety rules in the code: any failed step stops the sequence; unreadable state counts as a failure; verification ignores the first 3 s after the request (stale status); the clean app must be idle (`cleanStatus` 65535 only; other values are unmeasured and block).
 
@@ -28,7 +28,7 @@ $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
 - `local.properties` (git-ignored) must contain `sdk.dir=C\:\\Users\\RTX\\AppData\\Local\\Android\\Sdk`.
 - Emulator AVD `c40_api29` (Android 10, x86_64). Start it with `%LOCALAPPDATA%\Android\Sdk\emulator\emulator.exe -avd c40_api29`. The app detects the emulator and targets `10.0.2.2` (the host PC) instead of the robot's `localhost:8089` and `192.168.64.20:5683`.
 - Two `adb` binaries exist (the SDK one and `D:\peanut-sdk-v\tools\platform-tools`). Always pass `-s <device>` (`emulator-5554` or the robot's USB serial).
-- Probe logs are saved on the device in `/sdcard/Android/data/kr.c40.floor/files/`; fetch them with `adb pull`.
+- Probe logs are saved on the device in `/sdcard/Android/data/kr.c40.floor.onetouch/files/`; fetch them with `adb pull`.
 
 ```powershell
 .\gradlew.bat :core:test                  # sequencer unit tests (virtual clock, no network)
@@ -40,6 +40,8 @@ $env:JAVA_HOME="C:\Program Files\Android\Android Studio\jbr"
 
 - Test results are in `*/build/test-results/test/*.xml`. Check the XML, because Gradle's console output can hide that tests ran.
 - The robot is reached over USB adb only (serial `c3d9b8674f4b94f6`; the user does not use Wi-Fi adb, see memory). Install with `D:\peanut-sdk-v\tools\platform-tools\adb.exe -s c3d9b8674f4b94f6 install -r app\build\outputs\apk\debug\app-debug.apk`. The onboard ROS Ubuntu (`192.168.64.20`, ssh open) is not needed by the app.
+
+- Docs 06–08 (2026-10-15) came from the teammate repo `jungju3756-source/robot_dump`; raw dumps (ROS DB, scenes, APK) are in `local/robot_dump/` (git-ignored). Next steps are in that repo's `TODO.md`: second `/initialpose` test, floor markers, on-site test.
 
 ## Reading order and precedence
 

@@ -164,6 +164,45 @@ class FloorSwitchSequencerTest {
         assertEquals(1, robot.currentMap().floor)
     }
 
+    private val floor2Spot = FloorTarget(2, pose = Pose2D(0.09, 0.04, 2.15))
+
+    @Test
+    fun `기준 위치 방식은 지표점 없이 층 지도 전환으로 위치를 지정한다`() {
+        robot.landmarks = emptyList()
+        robot.legacyFields = true   // type/poseId 값을 모르는 상태
+        val r = run(floor2Spot)
+        assertTrue(r.summary, r.success)
+        assertEquals(listOf("switchMap:2@0.09,0.04 from 1@-2.5,-0.7"), robot.sent)
+    }
+
+    @Test
+    fun `기준 위치에서 너무 멀리 인식되면 성공으로 보지 않는다`() {
+        robot.poseOffsetM = 3.0
+        assertEquals(StepId.VERIFY, run(floor2Spot).failedAt)
+    }
+
+    @Test
+    fun `층 전환 서비스가 실패를 돌려주면 위치 지정에서 멈춘다`() {
+        robot.relocateOk = false
+        val r = run(floor2Spot)
+        assertEquals(StepId.RELOCATE, r.failedAt)
+        assertEquals(1, robot.sent.size)
+    }
+
+    @Test
+    fun `기준 위치 dry-run 은 보낼 ROS 요청을 기록한다`() {
+        val dry = DryRunCommands()
+        val r = run(floor2Spot, commands = dry)
+        assertTrue(r.summary, r.success)
+        assertTrue(dry.recorded[0], "/switch_floor_map_only" in dry.recorded[0] && "\"floor\":2" in dry.recorded[0])
+        assertTrue(robot.sent.isEmpty())
+    }
+
+    @Test(expected = IllegalArgumentException::class)
+    fun `지표점과 기준 위치를 함께 줄 수 없다`() {
+        FloorTarget(2, 102, Pose2D(0.0, 0.0, 0.0))
+    }
+
     @Test
     fun `dry-run 이어도 사전 점검은 그대로 적용된다`() {
         robot.cleanStatus = 3

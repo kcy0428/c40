@@ -5,10 +5,12 @@ data class RobotEndpoints(
     val httpBase: String,
     val coapHost: String,
     val coapPort: Int,
+    /** ROS rosbridge. 기준 위치 방식(`/switch_floor_map_only`)에만 쓴다. */
+    val rosbridgeUrl: String = "",
 ) {
     companion object {
-        val ROBOT = RobotEndpoints("http://localhost:8089", "192.168.64.20", 5683)
-        val EMULATOR = RobotEndpoints("http://10.0.2.2:8089", "10.0.2.2", 5683)
+        val ROBOT = RobotEndpoints("http://localhost:8089", "192.168.64.20", 5683, "ws://192.168.64.20:9090")
+        val EMULATOR = RobotEndpoints("http://10.0.2.2:8089", "10.0.2.2", 5683, "ws://10.0.2.2:9090")
     }
 }
 
